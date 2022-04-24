@@ -205,7 +205,7 @@ require (
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/appscode/go-querystring v0.0.0-20170504095604-0126cfb3f1dc // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
-	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef // indirect
+	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
 	github.com/aws/aws-sdk-go v1.37.0 // indirect
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.12.12 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.25 // indirect
@@ -230,14 +230,15 @@ require (
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/form3tech-oss/jwt-go v3.2.3+incompatible // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
-	github.com/go-logr/logr v1.2.0 // indirect
-	github.com/go-openapi/errors v0.19.8 // indirect
+	github.com/go-logr/logr v0.4.0 // indirect
+	github.com/go-openapi/errors v0.20.2 // indirect
 	github.com/go-openapi/strfmt v0.21.2 // indirect
-	github.com/go-playground/locales v0.14.0 // indirect
-	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/go-playground/locales v0.13.0 // indirect
+	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/go-resty/resty/v2 v2.1.1-0.20191201195748-d7b97669fe48 // indirect
 	github.com/go-routeros/routeros v0.0.0-20210123142807-2a44d57c6730 // indirect
-	github.com/go-stack/stack v1.8.0 // indirect
+	github.com/go-stack/stack v1.8.1 // indirect
+	github.com/gofrs/uuid v3.2.0+incompatible // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
@@ -269,7 +270,8 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kelseyhightower/envconfig v1.4.0 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
-	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/launchdarkly/api-client-go v5.3.0+incompatible
+	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/mattermost/xml-roundtrip-validator v0.0.0-20201213122252-bcd7e1b9601e // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-ieproxy v0.0.0-20190702010315-6dee0af9227d // indirect
@@ -308,7 +310,7 @@ require (
 	github.com/xdg-go/scram v1.0.2 // indirect
 	github.com/xdg-go/stringprep v1.0.2 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20181117223130-1be2e3e5546d // indirect
-	go.mongodb.org/mongo-driver v1.7.5 // indirect
+	go.mongodb.org/mongo-driver v1.8.3 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
@@ -338,7 +340,21 @@ require (
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
-require github.com/PuerkitoBio/rehttp v1.0.0 // indirect
+require (
+	github.com/PuerkitoBio/purell v1.1.1 // indirect
+	github.com/PuerkitoBio/rehttp v1.0.0 // indirect
+	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
+	github.com/go-openapi/analysis v0.21.2 // indirect
+	github.com/go-openapi/jsonpointer v0.19.5 // indirect
+	github.com/go-openapi/jsonreference v0.19.6 // indirect
+	github.com/go-openapi/loads v0.21.1 // indirect
+	github.com/go-openapi/spec v0.20.4 // indirect
+	github.com/go-openapi/swag v0.21.1 // indirect
+	github.com/go-openapi/validate v0.21.0 // indirect
+	github.com/josharian/intern v1.0.0 // indirect
+	github.com/mailru/easyjson v0.7.7 // indirect
+	github.com/opentracing/opentracing-go v1.2.0 // indirect
+)
 
 require (
 	cloud.google.com/go/cloudbuild v1.2.0
@@ -358,38 +374,10 @@ require (
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect
-	github.com/emicklei/go-restful v2.9.5+incompatible // indirect
-	github.com/go-openapi/jsonpointer v0.19.5 // indirect
-	github.com/go-openapi/jsonreference v0.19.5 // indirect
-	github.com/go-openapi/swag v0.19.14 // indirect
+	github.com/go-openapi/runtime v0.23.3
 	github.com/golang-jwt/jwt/v4 v4.3.0 // indirect
-	github.com/google/gnostic v0.5.7-v3refs // indirect
-	github.com/hashicorp/terraform-plugin-log v0.7.0 // indirect
-	github.com/josharian/intern v1.0.0 // indirect
-	github.com/mailru/easyjson v0.7.6 // indirect
-	github.com/manicminer/hamilton-autorest v0.2.0 // indirect
-	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
-	k8s.io/kube-openapi v0.0.0-20220328201542-3ee0da9b0b42 // indirect
-	sigs.k8s.io/json v0.0.0-20211208200746-9f7c6b3444d2 // indirect
-)
-
-require (
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/as v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cbs v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cdb v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cdn v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cfs v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/clb v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/es v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/gaap v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/mongodb v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/redis v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/scf v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/ssl v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/tcaplusdb v1.0.392
-	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc v1.0.392
+	github.com/peterhellberg/link v1.1.0 // indirect
+	goauthentik.io/api/v3 v3.2022041.3
 )
 
 replace gopkg.in/jarcoal/httpmock.v1 => github.com/jarcoal/httpmock v1.0.5
