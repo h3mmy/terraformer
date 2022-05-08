@@ -1,3 +1,8 @@
+# Notes
+* This is a fork of the original repo [GoogleCloudPlatform/terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+* My goal is to add a provider for [authentik](https://github.com/goauthentik/authentik)
+* This is a slow process as I don't get a lot of free time and so may make contributions here 1-2 times/month until complete. I will happily accept PRs, or if you prefer to run off your own fork, please tag me so I don't waste effort here and instead work on PRs there.
+
 # Terraformer
 
 [![tests](https://github.com/GoogleCloudPlatform/terraformer/actions/workflows/test.yml/badge.svg)](https://github.com/GoogleCloudPlatform/terraformer/actions/workflows/test.yml)
