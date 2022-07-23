@@ -1,4 +1,4 @@
-// Copyright 2018 The Terraformer Authors.
+// Copyright 2022 The Terraformer Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ type AuthentikProvider struct { //nolint
 	insecure     bool
 }
 
+// Initializes all supported services
 func (p *AuthentikProvider) Init(args []string) error {
 	akUrl := os.Getenv("AUTHENTIK_API_URL")
 	if akUrl == "" {
