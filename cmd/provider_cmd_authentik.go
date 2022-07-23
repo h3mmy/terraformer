@@ -23,6 +23,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Initializes Authentik Provider
 func newCmdAuthentikImporter(options ImportOptions) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "authentik",
