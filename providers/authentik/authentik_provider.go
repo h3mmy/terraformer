@@ -84,22 +84,32 @@ func (p *AuthentikProvider) InitService(serviceName string, verbose bool) error 
 
 func (p *AuthentikProvider) GetSupportedService() map[string]terraformutils.ServiceGenerator {
 	return map[string]terraformutils.ServiceGenerator{
-		"authentik_user":                          &UserGenerator{},
+		"authentik_event_rule":                    &EventRuleGenerator{},
 		"authentik_group":                         &GroupGenerator{},
 		"authentik_outpost":                       &OutpostGenerator{},
-		"authentik_event_rule":                    &EventRuleGenerator{},
 		"authentik_policy_binding":                &PolicyBindingGenerator{},
+		"authentik_policy_dummy":                  &PolicyDummyGenerator{},
+		"authentik_policy_event_matcher":          &PolicyEventMatcherGenerator{},
+		"authentik_policy_expiry":                 &PolicyExpiryGenerator{},
 		"authentik_policy_expression":             &PolicyExpressionGenerator{},
+		"authentik_policy_hibp":                   &PolicyHibpGenerator{},
+		"authentik_policy_password":               &PolicyPasswordGenerator{},
+		"authentik_policy_reputation":             &PolicyReputationGenerator{},
+		"authentik_property_mapping_ldap":         &PropertyMappingLdapGenerator{},
+		"authentik_property_mapping_saml":         &PropertyMappingSamlGenerator{},
+		"authentik_property_mapping_notification": &PropertyMappingNotificationGenerator{},
 		"authentik_provider_ldap":                 &ProviderLdapGenerator{},
 		"authentik_provider_oauth2":               &ProviderOauth2Generator{},
-		"authentik_provider_saml":                 &ProviderSamlGenerator{},
 		"authentik_provider_proxy":                &ProviderProxyGenerator{},
-		"authentik_service_connection_kubernetes": &ServiceConnectionKubernetesGenerator{},
+		"authentik_provider_saml":                 &ProviderSamlGenerator{},
 		"authentik_service_connection_docker":     &ServiceConnectionDockerGenerator{},
+		"authentik_service_connection_kubernetes": &ServiceConnectionKubernetesGenerator{},
 		"authentik_source_ldap":                   &SourceLdapGenerator{},
+		"authentik_source_oauth":                  &SourceOauthGenerator{},
 		"authentik_source_plex":                   &SourcePlexGenerator{},
 		"authentik_source_saml":                   &SourceSamlGenerator{},
-		"authentik_source_oauth":                  &SourceOauthGenerator{},
+		"authentik_token":                         &TokenGenerator{},
+		"authentik_user":                          &UserGenerator{},
 	}
 }
 
