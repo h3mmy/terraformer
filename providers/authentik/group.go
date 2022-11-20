@@ -31,7 +31,7 @@ func (g GroupGenerator) createResources(groups []*api.Group) []terraformutils.Re
 	resources := []terraformutils.Resource{}
 	for _, group := range groups {
 		resourceId := string(group.Pk)
-		resourceName := group.Groupname
+		resourceName := group.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

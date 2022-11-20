@@ -15,6 +15,8 @@
 package authentik
 
 import (
+	"fmt"
+
 	"github.com/GoogleCloudPlatform/terraformer/terraformutils"
 	api "goauthentik.io/api/v3"
 )
@@ -31,7 +33,7 @@ func (g FlowStageBindingGenerator) createResources(flowStageBindings []*api.Flow
 	resources := []terraformutils.Resource{}
 	for _, flowStageBinding := range flowStageBindings {
 		resourceId := string(flowStageBinding.Pk)
-		resourceName := flowStageBinding.FlowStageBindingname
+		resourceName := fmt.Sprintf("%d_%s_%s", flowStageBinding.Order, flowStageBinding.Stage, flowStageBinding.Target)
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

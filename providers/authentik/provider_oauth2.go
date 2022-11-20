@@ -15,29 +15,30 @@
 package authentik
 
 import (
+
 	"github.com/GoogleCloudPlatform/terraformer/terraformutils"
 	api "goauthentik.io/api/v3"
 )
 
 var (
-	FlowAllowEmptyValues = []string{}
+	ProviderOauth2AllowEmptyValues = []string{}
 )
 
-type FlowGenerator struct {
+type ProviderOauth2Generator struct {
 	AuthentikService
 }
 
-func (g FlowGenerator) createResources(flows []*api.Flow) []terraformutils.Resource {
+func (g ProviderOauth2Generator) createResources(oauth2Providers []*api.OAuth2Provider) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
-	for _, flow := range flows {
-		resourceId := string(flow.Pk)
-		resourceName := flow.Name
+	for _, providerOauth2 := range oauth2Providers {
+		resourceId := string(providerOauth2.Pk)
+		resourceName := providerOauth2.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,
-			"authentik_flow",
+			"authentik_provider_oauth2",
 			"authentik",
-			FlowAllowEmptyValues,
+			ProviderOauth2AllowEmptyValues,
 		))
 	}
 	return resources

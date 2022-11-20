@@ -20,24 +20,24 @@ import (
 )
 
 var (
-	FlowAllowEmptyValues = []string{}
+	PolicyExpressionAllowEmptyValues = []string{}
 )
 
-type FlowGenerator struct {
+type PolicyExpressionGenerator struct {
 	AuthentikService
 }
 
-func (g FlowGenerator) createResources(flows []*api.Flow) []terraformutils.Resource {
+func (g PolicyExpressionGenerator) createResources(policyExpressions []*api.ExpressionPolicy) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
-	for _, flow := range flows {
-		resourceId := string(flow.Pk)
-		resourceName := flow.Name
+	for _, policyExpression := range policyExpressions {
+		resourceId := string(policyExpression.Pk)
+		resourceName := policyExpression.VerboseName
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,
-			"authentik_flow",
+			"authentik_policy_expression",
 			"authentik",
-			FlowAllowEmptyValues,
+			PolicyExpressionAllowEmptyValues,
 		))
 	}
 	return resources

@@ -31,7 +31,7 @@ func (g OutpostGenerator) createResources(outposts []*api.Outpost) []terraformut
 	resources := []terraformutils.Resource{}
 	for _, outpost := range outposts {
 		resourceId := string(outpost.Pk)
-		resourceName := outpost.Outpostname
+		resourceName := outpost.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

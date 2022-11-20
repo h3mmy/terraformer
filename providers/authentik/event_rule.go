@@ -27,11 +27,11 @@ type EventRuleGenerator struct {
 	AuthentikService
 }
 
-func (g EventRuleGenerator) createResources(eventRules []*api.EventRule) []terraformutils.Resource {
+func (g EventRuleGenerator) createResources(eventRules []*api.NotificationRule) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
 	for _, eventRule := range eventRules {
 		resourceId := string(eventRule.Pk)
-		resourceName := eventRule.EventRulename
+		resourceName := eventRule.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

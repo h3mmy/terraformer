@@ -27,11 +27,11 @@ type EventTransportGenerator struct {
 	AuthentikService
 }
 
-func (g EventTransportGenerator) createResources(eventTransports []*api.EventTransport) []terraformutils.Resource {
+func (g EventTransportGenerator) createResources(eventTransports []*api.NotificationTransport) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
 	for _, eventTransport := range eventTransports {
 		resourceId := string(eventTransport.Pk)
-		resourceName := eventTransport.EventTransportname
+		resourceName := eventTransport.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

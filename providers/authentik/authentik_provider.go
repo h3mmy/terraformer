@@ -25,9 +25,9 @@ import (
 
 type AuthentikProvider struct { //nolint
 	terraformutils.Provider
-	url       string
-	token        string
-	insecure     bool
+	url      string
+	token    string
+	insecure bool
 }
 
 // Initializes all supported services
@@ -59,9 +59,9 @@ func (p *AuthentikProvider) GetName() string {
 
 func (p *AuthentikProvider) GetConfig() cty.Value {
 	return cty.ObjectVal(map[string]cty.Value{
-		"url":        cty.StringVal(p.url),
-		"token":      cty.StringVal(p.token),
-		"insecure":       cty.BoolVal(p.insecure),
+		"url":      cty.StringVal(p.url),
+		"token":    cty.StringVal(p.token),
+		"insecure": cty.BoolVal(p.insecure),
 	})
 }
 
@@ -75,8 +75,8 @@ func (p *AuthentikProvider) InitService(serviceName string, verbose bool) error 
 	p.Service.SetVerbose(verbose)
 	p.Service.SetProviderName(p.GetName())
 	p.Service.SetArgs(map[string]interface{}{
-		"url":        p.url,
-		"token":     p.token,
+		"url":      p.url,
+		"token":    p.token,
 		"insecure": p.insecure,
 	})
 	return nil
@@ -84,7 +84,22 @@ func (p *AuthentikProvider) InitService(serviceName string, verbose bool) error 
 
 func (p *AuthentikProvider) GetSupportedService() map[string]terraformutils.ServiceGenerator {
 	return map[string]terraformutils.ServiceGenerator{
-		"authentik_user":          &UserGenerator{},
+		"authentik_user":                          &UserGenerator{},
+		"authentik_group":                         &GroupGenerator{},
+		"authentik_outpost":                       &OutpostGenerator{},
+		"authentik_event_rule":                    &EventRuleGenerator{},
+		"authentik_policy_binding":                &PolicyBindingGenerator{},
+		"authentik_policy_expression":             &PolicyExpressionGenerator{},
+		"authentik_provider_ldap":                 &ProviderLdapGenerator{},
+		"authentik_provider_oauth2":               &ProviderOauth2Generator{},
+		"authentik_provider_saml":                 &ProviderSamlGenerator{},
+		"authentik_provider_proxy":                &ProviderProxyGenerator{},
+		"authentik_service_connection_kubernetes": &ServiceConnectionKubernetesGenerator{},
+		"authentik_service_connection_docker":     &ServiceConnectionDockerGenerator{},
+		"authentik_source_ldap":                   &SourceLdapGenerator{},
+		"authentik_source_plex":                   &SourcePlexGenerator{},
+		"authentik_source_saml":                   &SourceSamlGenerator{},
+		"authentik_source_oauth":                  &SourceOauthGenerator{},
 	}
 }
 

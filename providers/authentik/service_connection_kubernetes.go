@@ -15,29 +15,30 @@
 package authentik
 
 import (
+
 	"github.com/GoogleCloudPlatform/terraformer/terraformutils"
 	api "goauthentik.io/api/v3"
 )
 
 var (
-	FlowAllowEmptyValues = []string{}
+	ServiceConnectionKubernetesAllowEmptyValues = []string{}
 )
 
-type FlowGenerator struct {
+type ServiceConnectionKubernetesGenerator struct {
 	AuthentikService
 }
 
-func (g FlowGenerator) createResources(flows []*api.Flow) []terraformutils.Resource {
+func (g ServiceConnectionKubernetesGenerator) createResources(kubernetesServiceConnections []*api.KubernetesServiceConnection) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
-	for _, flow := range flows {
-		resourceId := string(flow.Pk)
-		resourceName := flow.Name
+	for _, serviceConnectionKubernetes := range kubernetesServiceConnections {
+		resourceId := string(serviceConnectionKubernetes.Pk)
+		resourceName := serviceConnectionKubernetes.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,
-			"authentik_flow",
+			"authentik_service_connection_kubernetes",
 			"authentik",
-			FlowAllowEmptyValues,
+			ServiceConnectionKubernetesAllowEmptyValues,
 		))
 	}
 	return resources

@@ -15,29 +15,30 @@
 package authentik
 
 import (
+
 	"github.com/GoogleCloudPlatform/terraformer/terraformutils"
 	api "goauthentik.io/api/v3"
 )
 
 var (
-	FlowAllowEmptyValues = []string{}
+	ProviderSamlAllowEmptyValues = []string{}
 )
 
-type FlowGenerator struct {
+type ProviderSamlGenerator struct {
 	AuthentikService
 }
 
-func (g FlowGenerator) createResources(flows []*api.Flow) []terraformutils.Resource {
+func (g ProviderSamlGenerator) createResources(samlProviders []*api.SAMLProvider) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
-	for _, flow := range flows {
-		resourceId := string(flow.Pk)
-		resourceName := flow.Name
+	for _, providerSaml := range samlProviders {
+		resourceId := string(providerSaml.Pk)
+		resourceName := providerSaml.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,
-			"authentik_flow",
+			"authentik_provider_saml",
 			"authentik",
-			FlowAllowEmptyValues,
+			ProviderSamlAllowEmptyValues,
 		))
 	}
 	return resources

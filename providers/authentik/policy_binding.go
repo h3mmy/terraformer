@@ -15,6 +15,8 @@
 package authentik
 
 import (
+	"fmt"
+
 	"github.com/GoogleCloudPlatform/terraformer/terraformutils"
 	api "goauthentik.io/api/v3"
 )
@@ -31,7 +33,7 @@ func (g PolicyBindingGenerator) createResources(policyBindings []*api.PolicyBind
 	resources := []terraformutils.Resource{}
 	for _, policyBinding := range policyBindings {
 		resourceId := string(policyBinding.Pk)
-		resourceName := policyBinding.PolicyBindingname
+		resourceName := fmt.Sprintf("%d_%s", policyBinding.Order, policyBinding.Target)
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

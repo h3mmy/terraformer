@@ -31,7 +31,7 @@ func (g CertificateKeyPairGenerator) createResources(certificateKeyPairs []*api.
 	resources := []terraformutils.Resource{}
 	for _, certificateKeyPair := range certificateKeyPairs {
 		resourceId := string(certificateKeyPair.Pk)
-		resourceName := certificateKeyPair.CertificateKeyPairname
+		resourceName := certificateKeyPair.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

@@ -31,7 +31,7 @@ func (g ApplicationGenerator) createResources(applications []*api.Application) [
 	resources := []terraformutils.Resource{}
 	for _, application := range applications {
 		resourceId := string(application.Pk)
-		resourceName := application.name
+		resourceName := application.Name
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,

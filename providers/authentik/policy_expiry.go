@@ -15,6 +15,7 @@
 package authentik
 
 import (
+
 	"github.com/GoogleCloudPlatform/terraformer/terraformutils"
 	api "goauthentik.io/api/v3"
 )
@@ -27,11 +28,11 @@ type PolicyExpiryGenerator struct {
 	AuthentikService
 }
 
-func (g PolicyExpiryGenerator) createResources(policyExpirys []*api.PolicyExpiry) []terraformutils.Resource {
+func (g PolicyExpiryGenerator) createResources(passwordExpiryPolicies []*api.PasswordExpiryPolicy) []terraformutils.Resource {
 	resources := []terraformutils.Resource{}
-	for _, policyExpiry := range policyExpirys {
+	for _, policyExpiry := range passwordExpiryPolicies {
 		resourceId := string(policyExpiry.Pk)
-		resourceName := policyExpiry.PolicyExpiryname
+		resourceName := policyExpiry.VerboseName
 		resources = append(resources, terraformutils.NewSimpleResource(
 			resourceId,
 			resourceName,
